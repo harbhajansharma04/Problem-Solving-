@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void subarray(int n, int s, int a[]){
+    // sort(a,a+n);
+    int k=0;
+    int m=n-1;
+    for(int i=0;i<n;i++)
+    {
+       k=k+a[i];
+       for(int j=i+1;j<n;j++)
+       {
+           k+=a[j];
+           if(k>s){
+               break;
+           }
+           if(k==s){
+               cout<<i+1<<" "<<j+1;
+               exit(0);
+           }
+           
+       }
+       k=0;
+        
+    }
+}
+int main(){
+    int n=5;
+    int s=33;
+    int a[]={1, 4, 20, 3, 10, 5};
+    subarray(n,s,a);
+}
